@@ -26,74 +26,92 @@ function validate (name, data) {
   })
 }
 
+//请求后的数据
 exports.afterRequest = function (data) {  //暴露接口
   return validate('afterRequest', data)
 }
 
+//证实请求的数据前
 exports.beforeRequest = function (data) {
   return validate('beforeRequest', data)
 }
 
+//证实浏览器的数据
 exports.browser = function (data) {
   return validate('browser', data)
 }
 
+//证实缓存对象
 exports.cache = function (data) {
   return validate('cache', data)
 }
 
+//内容
 exports.content = function (data) {
   return validate('content', data)
 }
 
+//cookie对象
 exports.cookie = function (data) {
   return validate('cookie', data)
 }
 
+//创建者
 exports.creator = function (data) {
   return validate('creator', data)
 }
 
+//入口对象
 exports.entry = function (data) {
   return validate('entry', data)
 }
 
+//HAR(哈尔)对象
 exports.har = function (data) {
   return validate('har', data)
 }
 
+//头对象
 exports.header = function (data) {
   return validate('header', data)
 }
 
+//日志对象
 exports.log = function (data) {
   return validate('log', data)
 }
 
+//页面对象
 exports.page = function (data) {
   return validate('page', data)
 }
 
+//pageTimings对象 这个对象描述了在页面加载过程中各个事件发生的时间点。所有的时间都是以毫秒计算的。如果有的时间无法计算出来，那么相应字段置为-1。
 exports.pageTimings = function (data) {
   return validate('pageTimings', data)
 }
 
+//postData Post数据信息
 exports.postData = function (data) {
   return validate('postData', data)
 }
 
+//queryString查询字符串信息
 exports.query = function (data) {
   return validate('query', data)
 }
 
+//请求对象
 exports.request = function (data) {
   return validate('request', data)
 }
 
+//响应对象
 exports.response = function (data) {
   return validate('response', data)
 }
 
+//计时对象 这个对象描述了请求/响应过程的各个阶段。时间都是以毫秒为单位。
 exports.timings = function (data) {
   return validate('timings', data)
 }
