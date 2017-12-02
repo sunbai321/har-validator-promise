@@ -24,7 +24,7 @@ validate.afterRequest(data)//证实请求的数据后
   .catch(console.error)
 ```
 
-### validate.beforeRequest(data) //在请求后缓存的状态
+### validate.beforeRequest(data) //浏览器缓存信息中请求前缓存的状态
 
 > Returns a promise that resolves to the valid object.
 //返回一个的承诺（这个承诺解析到有效对象中）
