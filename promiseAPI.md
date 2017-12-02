@@ -6,7 +6,7 @@ import * as validate from 'har-validator'      //进口*作为一个har-validato
 import * as validate from 'har-validator/lib/promise'
 import { request, response } from 'har-validator/lib/promise'   //请求，响应
 ```
-前三行是引入模块接口
+前三行是ES6中引入模块接口
 后面是调用方法一样，只是方法的名称不一样
 ### validate.afterRequest(data) //浏览器缓存信息中请求后缓存的状态
 
@@ -24,13 +24,14 @@ validate.afterRequest(data)//证实请求的数据后
   .catch(console.error)
 ```
 
-### validate.beforeRequest(data) //浏览器缓存信息中请求前缓存的状态
+### validate.beforeRequest(data) //返回浏览器缓存信息中请求前缓存的状态
 
 > Returns a promise that resolves to the valid object.
 //返回一个的承诺（这个承诺解析到有效对象中）
 
 - **data**: `Object` *(Required)* 
-数据格式a ["beforeRequest"](https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cache) objects
+数据格式
+a ["beforeRequest"](https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cache) objects
 
 ```js
 validate.beforeRequest(data)  
