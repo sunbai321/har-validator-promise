@@ -1,6 +1,7 @@
 resolve函数的作用：在异步操作成功时调用，并将异步操作的结果，作为参数传递出去;  
 reject函数的作用：在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
 
+
 var Ajv = require('ajv')
 var HARError = require('./error')
 var schemas = require('har-schema')
@@ -8,7 +9,7 @@ var schemas = require('har-schema')
 
 var ajv
 
-//validate
+//validate主函数
 function validate (name, data) {
   data = data || {}//如果data有值就返回data值，没有就给他赋值为空
  
@@ -18,8 +19,12 @@ function validate (name, data) {
     schemas: schemas
   })
 
-  var validate = ajv.getSchema(name + '.json')//ajv的getSchema方法
-  return new Promise(function (resolve, reject) {  //实例化一个promise对象，返回一个函数
+  var validate = ajv.getSchema(name + '.json')//ajv的getSchema方法，自动生成一个验证函数
+  
+  return new Promise(function (resolve, reject) {  //实例化一个promise对象，返回一个函数//Promise resolver
+ //这创造并返回一个新的承诺。 resolver必须是一个功能。该resolver函数传递两个参数：
+//resolve应该用一个参数来调用。如果用一个非承诺价值来调用，那么承诺就是用这个价值来实现的。如果用承诺（A）来调用，那么所返回的承诺将承担该新承诺（A）的状态。
+//reject应该用一个参数来调用。这个答复将被拒绝。
     var valid = validate(data)
 
     !valid ? reject(new HARError(validate.errors)) : resolve(data)
