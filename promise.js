@@ -25,8 +25,8 @@ function validate (name, data) {
     //Promise resolver,创造并返回一个新的承诺。 resolver必须是一个功能。该resolver函数传递两个参数：
 //resolve应该用一个参数来调用。如果用一个非承诺价值来调用， 那么承诺就是用这个价值来实现的。如果用承诺（A）来调用，那么所返回的承诺将承担该新承诺（A）的状态。
 //reject应该用一个参数来调用。这个答复将被拒绝。
-    var valid = validate(data)
-
+    var valid = validate(data)//将数据验证并返回true或者false
+ 
     !valid ? reject(new HARError(validate.errors)) : resolve(data)
   })
 }
