@@ -1,6 +1,6 @@
 ## Promise API  //承诺API
-//har = http archive
-
+//har = http archive (http档案)
+ 
 ```js
 import * as validate from 'har-validator'      //进口*作为一个har-validator验证
 import * as validate from 'har-validator/lib/promise'
@@ -8,11 +8,11 @@ import { request, response } from 'har-validator/lib/promise'   //请求，响�
 ```
 前三行是ES6中引入模块接口
 后面是调用方法一样，只是方法的名称不一样
-### validate.afterRequest(data) //浏览器缓存信息中请求后缓存的状态
+### validate.afterRequest(data) //返回浏览器缓存信息中请求后缓存的状态
 
-> Returns a promise that resolves to the valid object. 
-     //返回一个promise对象（这个承诺解析到有效对象中）
-     //Promise.resolve(value)方法返回一个以给定值解析后的Promise对象。但如果这个值是个thenable（即带有then方法），返回的promise会“跟随”           // 这个thenable的对象，采用它的最终状态（指resolved/rejected/pending/settled）；否则以该值为成功状态返回promise对象。
+> Returns a promise that resolves to the valid object.   
+     //返回一个promise对象（这个承诺解析到有效对象中）  
+     Promise.resolve(value)方法返回一个以给定值解析后的Promise对象。但如果这个值是个thenable（即带有then方法），返回的promise会“跟随”            这个thenable的对象，采用它的最终状态（指resolved/rejected/pending/settled）；否则以该值为成功状态返回promise对象。  
 
 - **data**: `Object` *(Required)*
   a ["afterRequest"](https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cache) objects
